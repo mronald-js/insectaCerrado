@@ -12,16 +12,16 @@ export default function CatalogPage() {
             <input
                 type="text"
                 placeholder="Buscar insetos..."
-                className="w-full p-2 border border-gray-300 rounded"
+                className="w-full p-2 border font-semibold text-amber-900 border-gray-300 rounded"
             />
-            <select className="ml-2 p-2 border border-gray-300 rounded">
+            <select className="ml-2 p-2 border border-gray-300 text-amber-900 rounded">
                 <option value="">Ordenar por</option>
                 <option value="name">Nome</option>
                 <option value="family">Família</option>
                 <option value="habitat">Habitat</option>
                 <option value="size">Tamanho</option>
             </select>
-            <select className="ml-2 p-2 border border-gray-300 rounded">
+            <select className="ml-2 p-2 border border-gray-300 text-amber-900 rounded">
                 <option value="">Filtrar por Família</option>
                 <option value="coleoptera">Coleoptera</option>
                 <option value="lepidoptera">Lepidoptera</option>
