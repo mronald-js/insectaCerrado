@@ -1,39 +1,40 @@
-import Catalog from "@/components/catalogue";
+'use client'
+import { useEffect, useState } from 'react'
+import { Inseto } from '@/types/Inseto'
+import Link from 'next/link'
+import { insetosExemplo } from '@/utils/exemplos'
+import InsetoComponente from '@/components/InsetoComponente'
 
-export default function CatalogPage() {
-    return (
-        <main className="flex flex-col items-center min-h-screen bg-white p-4">
-        <h1 className="text-6xl font-bold text-amber-400 mt-12 mb-4">Catálogo de Insetos</h1>
-        <p className="text-xl text-amber-600 mb-8">
-            Explore a diversidade dos insetos do Cerrado Brasileiro
-        </p>
+export default function Home() {
+    const [insetos, setInsetos] = useState<Inseto[]>([])
 
-        <div className="flex w-full max-w-4xl mb-8">
-            <input
-                type="text"
-                placeholder="Buscar insetos..."
-                className="w-full p-2 border border-gray-300 rounded"
-            />
-            <select className="ml-2 p-2 border border-gray-300 rounded">
-                <option value="">Ordenar por</option>
-                <option value="name">Nome</option>
-                <option value="family">Família</option>
-                <option value="habitat">Habitat</option>
-                <option value="size">Tamanho</option>
-            </select>
-            <select className="ml-2 p-2 border border-gray-300 rounded">
-                <option value="">Filtrar por Família</option>
-                <option value="coleoptera">Coleoptera</option>
-                <option value="lepidoptera">Lepidoptera</option>
-                <option value="hymenoptera">Hymenoptera</option>
-                <option value="diptera">Diptera</option>
-                <option value="orthoptera">Orthoptera</option>
-                <option value="hemiptera">Hemiptera</option>
-            </select>
-        </div>
+    useEffect(() => {
+        const dados = localStorage.getItem('insetos')
+        if (dados) {
+            setInsetos(JSON.parse(dados))
+        } else {
+            localStorage.setItem('insetos', JSON.stringify(insetosExemplo))
+            setInsetos(insetosExemplo)
+        }
+    }, [])
 
-        <Catalog />
-        
-        </main>
-    );
+    const remover = (id: number) => {
+        const novos = insetos.filter(i => i.id !== id)
+        setInsetos(novos)
+        localStorage.setItem('insetos', JSON.stringify(novos))
     }
+
+    return (
+        <main className="flex flex-col items-center justify-center min-h-screen p-4">
+            <main className="max-w-2xl mx-auto p-6 space-y-4">
+                <h1 className="text-2xl font-bold text-amber-400">Catálogo de Insetos</h1>
+                <Link href="/catalog/new" className="text-green-600">+ Adicionar Inseto</Link>
+                <ul className="space-y-3">
+                    {insetos.map(inseto => (
+                        <InsetoComponente key={inseto.id} inseto={inseto} onDelete={remover} />
+                    ))}
+                </ul>
+            </main>
+        </main>
+    )
+}
