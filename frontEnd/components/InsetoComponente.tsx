@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Inseto } from '@/types/Inseto'
 import Link from 'next/link'
+import Image from 'next/image'
 import ConfirmarExclusaoModal from '@/components/ConfirmarExclusaoModal'
 
 type Props = {
@@ -19,12 +20,14 @@ export default function InsetoComponente({ inseto, onDelete }: Props) {
     fecharModal()
   }
 
+  const srcImagem = inseto.imagemBase64 || inseto.imagemURL;
+
   return (
     <>
       <li className="border p-3 rounded flex gap-4">
-        {(inseto.imagemBase64 || inseto.imagemURL) && (
-          <img
-            src={inseto.imagemBase64 || inseto.imagemURL}
+        {srcImagem && (
+          <Image
+            src={srcImagem}
             alt={inseto.nomeComum}
             className="w-24 h-24 object-cover rounded"
           />

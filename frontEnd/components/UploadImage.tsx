@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function UploadImagem({ onImageSelect }: { onImageSelect: (base64: string) => void }) {
   const [preview, setPreview] = useState<string | null>(null)
@@ -31,7 +32,7 @@ export default function UploadImagem({ onImageSelect }: { onImageSelect: (base64
           />
         </label>
         {preview && (
-          <img
+          <Image
             src={preview}
             alt="Pré-visualização"
             className="w-24 h-24 object-cover rounded border"
