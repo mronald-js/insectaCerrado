@@ -7,7 +7,7 @@ export default function NovaPagina() {
   const router = useRouter()
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
+    <div className="min-h-screen flex flex-col justify-center p-6 max-w-xl mx-auto">
       <h2 className="text-xl font-bold mb-4">Cadastrar Nova Espécie</h2>
       <InsetoForm onSubmit={(inseto) => {
         adicionarInseto(inseto)
