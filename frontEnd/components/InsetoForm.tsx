@@ -2,6 +2,7 @@
 import { Inseto } from '@/types/Inseto'
 import { useState } from 'react'
 import UploadImagem from './UploadImage'
+import Link from 'next/link'
 
 interface Props {
   initial?: Inseto
@@ -13,13 +14,17 @@ export default function InsetoForm({ initial, onSubmit }: Props) {
 
   const [form, setForm] = useState<Inseto>({
     id: initial?.id ?? Date.now(),
+    imagemURL: initial?.imagemURL ?? '',
+    observacoes: initial?.observacoes ?? '',
+    familia: initial?.familia ?? '',
     nomeComum: initial?.nomeComum ?? '',
+    descricao: initial?.descricao ?? '',
     nomeCientifico: initial?.nomeCientifico ?? '',
     localizacao: initial?.localizacao ?? '',
-    observacoes: initial?.observacoes ?? '',
     imagemBase64: imagemBase64 ?? '',
-    imagemURL: initial?.imagemURL ?? '',
+
   })
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -44,7 +49,15 @@ export default function InsetoForm({ initial, onSubmit }: Props) {
         setForm({ ...form, imagemBase64: base64 })
       }} />
 
-      <button className="bg-green-600 text-white px-4 py-2 rounded">{initial ? 'Atualizar' : 'Cadastrar'}</button>
+      <div className='flex justify-end mt-8 gap-4'>
+
+        <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 cursor-pointer rounded">{initial ? 'Atualizar' : 'Cadastrar'}</button>
+        
+        <Link href='/catalog'>
+          <button className="bg-gray-400 text-white px-4 py-2 cursor-pointer hover:bg-gray-600 rounded">Voltar</button>
+        </Link>
+      
+      </div>
     </form>
   )
 }

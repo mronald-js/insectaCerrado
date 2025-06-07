@@ -18,7 +18,7 @@ export default function Editar() {
   if (!inseto) return <p className="p-6">Espécie não encontrada.</p>
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
+    <div className="p-6 max-w-xl flex flex-col justify-center items-center mx-auto min-h-screen">
       <h2 className="text-xl font-bold mb-4">Editar Espécie</h2>
       <InsetoForm initial={inseto} onSubmit={(novo) => {
         atualizarInseto(novo)
