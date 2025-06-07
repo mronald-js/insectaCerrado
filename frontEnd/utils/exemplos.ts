@@ -1,44 +1,105 @@
-import { Inseto } from '@/types/Inseto'
+// @/utils/exemplos.ts
+import { Inseto } from '@/types/Inseto';
 
 export const insetosExemplo: Inseto[] = [
   {
     id: 1,
     nomeComum: 'Joaninha',
     nomeCientifico: 'Coccinellidae',
+    familia: 'Coccinellidae',
     localizacao: 'Folhas de plantas',
-    observacoes: 'Predadora de pulgões.',
-    imagemURL: 'https://s2.static.brasilescola.uol.com.br/be/2023/12/vista-aproximada-de-uma-joaninha-sobre-uma-folha.jpg'
+    observacoes: 'Predadora de pulgões, ajuda no controle biológico de pragas.',
+    imagemURL: 'https://s2.static.brasilescola.uol.com.br/be/2023/12/vista-aproximada-de-uma-joaninha-sobre-uma-folha.jpg',
+    descricao: 'Inseto pequeno e colorido, geralmente vermelho com manchas pretas, conhecido por sua aparência amigável e papel no controle de pragas agrícolas.',
   },
   {
     id: 2,
     nomeComum: 'Libélula',
     nomeCientifico: 'Anisoptera',
+    familia: 'Libellulidae',
     localizacao: 'Perto de rios e lagos',
-    observacoes: 'Boa caçadora de mosquitos.',
-    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Darter_August_2007-22_edit.jpg/1200px-Darter_August_2007-22_edit.jpg'
+    observacoes: 'Boa caçadora de mosquitos, com voo ágil e olhos grandes.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Darter_August_2007-22_edit.jpg/1200px-Darter_August_2007-22_edit.jpg',
+    descricao: 'Inseto de corpo alongado e asas transparentes, comum em áreas úmidas, onde caça outros insetos em voo com grande precisão.',
   },
   {
     id: 3,
     nomeComum: 'Borboleta-monarca',
     nomeCientifico: 'Danaus plexippus',
+    familia: 'Nymphalidae',
     localizacao: 'Campos floridos',
-    observacoes: 'Migra longas distâncias.',
-    imagemURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrGJxmfhqYoyi3sB1Lw6XLL1MiqXq2jiPRHA&s'
+    observacoes: 'Migra longas distâncias entre o Canadá e o México.',
+    imagemURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrGJxmfhqYoyi3sB1Lw6XLL1MiqXq2jiPRHA&s',
+    descricao: 'Borboleta de asas laranjas com veios pretos, famosa por suas migrações anuais de milhares de quilômetros e beleza marcante.',
   },
   {
     id: 4,
     nomeComum: 'Formiga',
     nomeCientifico: 'Formicidae',
+    familia: 'Formicidae',
     localizacao: 'Qualquer ambiente',
-    observacoes: 'Inseto social em colônias.',
-    imagemURL: 'https://s1.static.brasilescola.uol.com.br/be/e/image/formiga.jpg'
+    observacoes: 'Inseto social que vive em colônias altamente organizadas.',
+    imagemURL: 'https://s1.static.brasilescola.uol.com.br/be/e/image/formiga.jpg',
+    descricao: 'Inseto social encontrado em diversos habitats, conhecido por sua força relativa e comportamento cooperativo em colônias.',
   },
   {
     id: 5,
     nomeComum: 'Besouro rinoceronte',
     nomeCientifico: 'Dynastinae',
+    familia: 'Scarabaeidae',
     localizacao: 'Troncos podres',
-    observacoes: 'Fortes chifres frontais.',
-    imagemURL: 'https://img.cdndsgni.com/preview/10094321.jpg'
-  }
-]
+    observacoes: 'Possui chifres frontais usados em disputas territoriais.',
+    imagemURL: 'https://img.cdndsgni.com/preview/10094321.jpg',
+    descricao: 'Besouro robusto com chifre característico, vive em madeira em decomposição e é conhecido por sua força e aparência impressionante.',
+  },
+  {
+    id: 6,
+    nomeComum: 'Cigarra',
+    nomeCientifico: 'Quesada gigas',
+    familia: 'Cicadidae',
+    localizacao: 'Árvores no Cerrado',
+    observacoes: 'Conhecida pelo canto alto dos machos durante o verão.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Neotibicen_linnei.jpg/960px-Neotibicen_linnei.jpg',
+    descricao: 'Inseto com ciclo de vida longo, famoso pelo som característico produzido pelos machos para atrair fêmeas.',
+  },
+  {
+    id: 7,
+    nomeComum: 'Gafanhoto Verde',
+    nomeCientifico: 'Schistocerca americana',
+    familia: 'Acrididae',
+    localizacao: 'Campos abertos e Cerrado',
+    observacoes: 'Inseto saltador, pode formar enxames em certas condições.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Big_Grasshopper_2.jpg/960px-Big_Grasshopper_2.jpg',
+    descricao: 'Gafanhoto de coloração verde vibrante, importante para o equilíbrio ecológico, mas pode ser praga em plantações.',
+  },
+  {
+    id: 8,
+    nomeComum: 'Abelha',
+    nomeCientifico: 'Apis mellifera',
+    familia: 'Apidae',
+    localizacao: 'Áreas com flores',
+    observacoes: 'Fundamental para a polinização e produção de mel.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Bee_Collecting_Pollen_2004-08-14.jpg/960px-Bee_Collecting_Pollen_2004-08-14.jpg',
+    descricao: 'Inseto social essencial para a polinização de plantas, vive em colmeias e produz mel e cera.',
+  },
+  {
+    id: 9,
+    nomeComum: 'Escaravelho',
+    nomeCientifico: 'Scarabaeus sacer',
+    familia: 'Scarabaeidae',
+    localizacao: 'Solos arenosos',
+    observacoes: 'Conhecido por rolar bolas de esterco.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Cetonia-aurata.jpg/960px-Cetonia-aurata.jpg',
+    descricao: 'Besouro que utiliza esterco para alimentação e reprodução, símbolo cultural em algumas civilizações antigas.',
+  },
+  {
+    id: 10,
+    nomeComum: 'Vaga-lume',
+    nomeCientifico: 'Lampyridae',
+    familia: 'Lampyridae',
+    localizacao: 'Áreas úmidas e florestas',
+    observacoes: 'Emite luz para atrair parceiros durante a noite.',
+    imagemURL: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Lampyris_noctiluca.jpg',
+    descricao: 'Inseto bioluminescente que produz luz em seu abdômen, criando um espetáculo noturno em ambientes naturais.',
+  },
+];

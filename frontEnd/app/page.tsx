@@ -1,9 +1,9 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
-      <Image
+      <img
         src="/images/logo.png"
         alt="InsectaCerrado Logo"
         width={200}

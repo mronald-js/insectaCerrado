@@ -19,17 +19,19 @@ export default function UploadImagem({ onImageSelect }: { onImageSelect: (base64
   }
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex gap-4 items-center">
       <label className="block mb-2 font-medium">Ou envie uma imagem:</label>
       <div className="flex items-center gap-4">
         <label className="cursor-pointer bg-amber-600 text-white px-4 py-2 rounded hover:bg-amber-800">
-          Escolher imagem
+
+          <span>Escolher Imagem: </span>
           <input
             type="file"
             accept="image/*"
             className="hidden"
             onChange={handleImageUpload}
           />
+
         </label>
         {preview && (
           <Image
