@@ -20,7 +20,7 @@ export default function Details({ inseto, isOpen, onClose }: DetailsProps) {
           &times;
         </button>
         <h1 className="text-3xl font-bold text-amber-700 mb-4">{inseto.nomeComum}</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 justify-self-center gap-6">
           <div>
             <img
               src={inseto.imagemBase64 || inseto.imagemURL || '/images/placeholder.jpg'}
