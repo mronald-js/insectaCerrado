@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InsectaCerrado
 
-## Getting Started
+Sistema de catalogação de insetos do Cerrado Brasileiro desenvolvido como projeto para INF - UFG.
 
-First, run the development server:
+## Descrição
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+O **InsectaCerrado** é uma aplicação web construída com [Next.js](https://nextjs.org/) que permite cadastrar, visualizar, editar e remover espécies de insetos típicos do Cerrado. O sistema utiliza armazenamento local do navegador (localStorage) para persistência dos dados e oferece uma interface amigável para gerenciamento do catálogo.
+
+## Funcionalidades
+
+!OBSS - A funcionalidade em questão contempla a RF03 definida no documento final do projeto! (Requisito Funcional 03 - Cadastro de Obserações)
+
+- Listagem de insetos cadastrados com visualização em cards.
+- Cadastro de novas espécies com upload de imagem (URL ou base64).
+- Edição dos dados de espécies já cadastradas.
+- Remoção de espécies com confirmação.
+- Visualização detalhada de cada inseto em modal.
+- Dados de exemplo carregados automaticamente no primeiro acesso.
+- Interface responsiva e moderna com Tailwind CSS.
+
+## Estrutura do Projeto
+
+```
+app/
+  layout.tsx           # Layout global da aplicação
+  page.tsx             # Página inicial
+  globals.css          # Estilos globais
+  catalog/
+    page.tsx           # Listagem do catálogo
+    new/page.tsx       # Cadastro de nova espécie
+    edit/[id]/page.tsx # Edição de espécie existente
+components/
+  catalogue.tsx        # Componente de listagem de insetos
+  InsectCard.tsx       # Card individual do inseto
+  Details.tsx          # Modal de detalhes do inseto
+  InsetoForm.tsx       # Formulário de cadastro/edição
+  UploadImage.tsx      # Upload de imagem (base64)
+  ConfirmarExclusaoModal.tsx # Modal de confirmação de exclusão
+  footer.tsx           # Rodapé
+lib/
+  insetoStorage.tsx    # Funções utilitárias para manipulação do localStorage
+types/
+  Inseto.tsx           # Interface TypeScript para o modelo de inseto
+utils/
+  exemplos.ts          # Dados de exemplo de insetos
+public/
+  images/              # Imagens estáticas (logo, exemplos)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como rodar o projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pré requisitos
+1. Ter o node instalado
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Passo a passo
 
-## Learn More
+1. Clone o projeto em sua máquina/acessa a pasta "FrontEnd"
 
-To learn more about Next.js, take a look at the following resources:
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Inicie o servidor de desenvolvimento:
+   ```sh
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-## Deploy on Vercel
+(Em caso de erro, tente instalar separadamente a biblioteca do next, npm i next)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tecnologias Utilizadas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Organização dos Dados
+
+Os insetos são representados pela interface [`Inseto`](types/Inseto.tsx), contendo campos como `id`, `nomeComum`, `nomeCientifico`, `familia`, `descricao`, `imagemURL`, `imagemBase64`, entre outros.
+
+O armazenamento é feito no localStorage, utilizando as funções utilitárias de [`lib/insetoStorage.tsx`](lib/insetoStorage.tsx).
+
+## Observações
+Os modelos de inseto listados são exemplos e podem não corresponder, o foco é a funcionalidade
+
+## Contribuição
+
+Sinta-se à vontade para abrir issues ou pull requests para sugerir melhorias ou corrigir problemas.
+
+---
+
+Desenvolvido por INF - UFG.
+Autores: Marcello Ronald, Libna Rafely, Nicoly Liechiesk, Lucas, Matheus Augusto
